@@ -1,0 +1,1422 @@
+<!doctype html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <meta content="IE=edge,chrome=1" http-equiv="X-UA-Compatible">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+    <title>API Documentation</title>
+
+    <link href="stylesheets/screen.css" rel="stylesheet" type="text/css" media="screen" />
+    <link href="stylesheets/print.css" rel="stylesheet" type="text/css" media="print" />
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.3/jquery.min.js"></script>
+      <script src="javascripts/all_nosearch.js" type="text/javascript"></script>
+
+  </head>
+
+  <body class="index">
+    <a href="#" id="nav-button">
+      <span>
+        NAV
+        <img src="images/navbar.png" />
+      </span>
+    </a>
+    <div class="tocify-wrapper">
+      <img src="images/logo.png" />
+      <div id="toc">
+      </div>
+    </div>
+    <div class="page-wrapper">
+      <div class="dark-box"></div>
+      <div class="content">
+        <h1 id="enums">Enums</h1>
+
+<p>These enums are stored in the language independent <a href="https://github.com/PrismarineJS/minecraft-data">minecraft-data</a> project,
+ and accessed through <a href="https://github.com/PrismarineJS/node-minecraft-data">node-minecraft-data</a>.</p>
+
+<h2 id="mineflayer.data">mineflayer.data</h2>
+
+<p>Provide access to the full <a href="https://github.com/PrismarineJS/node-minecraft-data">node-minecraft-data</a> module
+(it is possible to use this module by requiring it, but mineflayer.data is the version used by mineflayer)</p>
+
+<h2 id="mineflayer.blocks">mineflayer.blocks</h2>
+
+<p>blocks indexed by id</p>
+
+<h2 id="mineflayer.items">mineflayer.items</h2>
+
+<p>items indexed by id</p>
+
+<h2 id="mineflayer.materials">mineflayer.materials</h2>
+
+<p>The key is the material. The value is an object with the key as the item id
+of the tool and the value as the efficiency multiplier.</p>
+
+<h2 id="mineflayer.recipes">mineflayer.recipes</h2>
+
+<p>recipes indexed by id</p>
+
+<h2 id="mineflayer.instruments">mineflayer.instruments</h2>
+
+<p>instruments indexed by id</p>
+
+<h2 id="mineflayer.biomes">mineflayer.biomes</h2>
+
+<p>biomes indexed by id</p>
+
+<h2 id="mineflayer.entities">mineflayer.entities</h2>
+
+<p>entities indexed by id</p>
+
+<h1 id="classes">Classes</h1>
+
+<h2 id="mineflayer.vec3">mineflayer.vec3</h2>
+
+<p>See <a href="https://github.com/andrewrk/node-vec3">andrewrk/node-vec3</a></p>
+
+<p>All points in mineflayer are supplied as instances of this class.</p>
+
+<ul>
+<li>x - south</li>
+<li>y - up</li>
+<li>z - west</li>
+</ul>
+
+<p>Functions and methods which require a point argument accept <code class="prettyprint">Vec3</code> instances
+as well as an array with 3 values, and an object with <code class="prettyprint">x</code>, <code class="prettyprint">y</code>, and <code class="prettyprint">z</code>
+properties.</p>
+
+<h2 id="mineflayer.location">mineflayer.Location</h2>
+
+<h2 id="mineflayer.entity">mineflayer.Entity</h2>
+
+<p>Entities represent players, mobs, and objects. They are emitted
+in many events, and you can access your own entity with <code class="prettyprint">bot.entity</code>.</p>
+
+<h3 id="entity.id">entity.id</h3>
+
+<h3 id="entity.type">entity.type</h3>
+
+<p>Choices:</p>
+
+<ul>
+<li><code class="prettyprint">player</code></li>
+<li><code class="prettyprint">mob</code></li>
+<li><code class="prettyprint">object</code></li>
+<li><code class="prettyprint">global</code> - lightning</li>
+<li><code class="prettyprint">orb</code> - experience orb.</li>
+</ul>
+
+<h3 id="entity.username">entity.username</h3>
+
+<p>If the entity type is <code class="prettyprint">player</code>, this field will be set.</p>
+
+<h3 id="entity.mobtype">entity.mobType</h3>
+
+<p>If the entity type is <code class="prettyprint">mob</code>, this field will be set.</p>
+
+<h3 id="entity.displayname">entity.displayName</h3>
+
+<p>Field set for mob and object. A long name in multiple words.</p>
+
+<h3 id="entity.entitytype">entity.entityType</h3>
+
+<p>Field set for mob and object. The numerical type of the entity (1,2,&hellip;)</p>
+
+<h3 id="entity.kind">entity.kind</h3>
+
+<p>Field set for mob and object. The kind of entity (for example Hostile mobs, Passive mobs, NPCs).</p>
+
+<h3 id="entity.name">entity.name</h3>
+
+<p>Field set for mob and object. A short name for the entity.</p>
+
+<h3 id="entity.objecttype">entity.objectType</h3>
+
+<p>If the entity type is <code class="prettyprint">object</code>, this field will be set.</p>
+
+<h3 id="entity.count">entity.count</h3>
+
+<p>If the entity type is <code class="prettyprint">orb</code>, this field will be how much experience you
+get from collecting the orb.</p>
+
+<h3 id="entity.position">entity.position</h3>
+
+<h3 id="entity.velocity">entity.velocity</h3>
+
+<h3 id="entity.yaw">entity.yaw</h3>
+
+<h3 id="entity.pitch">entity.pitch</h3>
+
+<h3 id="entity.height">entity.height</h3>
+
+<h3 id="entity.onground">entity.onGround</h3>
+
+<h3 id="entity.equipment[5]">entity.equipment[5]</h3>
+
+<ul>
+<li><code class="prettyprint">0</code> - held item</li>
+<li><code class="prettyprint">1</code> - head</li>
+<li><code class="prettyprint">2</code> - torso</li>
+<li><code class="prettyprint">3</code> - legging</li>
+<li><code class="prettyprint">4</code> - shoes</li>
+</ul>
+
+<h3 id="entity.helditem">entity.heldItem</h3>
+
+<p>Equivalent to <code class="prettyprint">entity.equipment[0]</code>.</p>
+
+<h3 id="entity.metadata">entity.metadata</h3>
+
+<p>See http://wiki.vg/Entities#Entity_Metadata_Format for more details.</p>
+
+<h2 id="mineflayer.block">mineflayer.Block</h2>
+
+<h3 id="block.position">block.position</h3>
+
+<p>Vec3 instance.</p>
+
+<h3 id="block.type">block.type</h3>
+
+<p>Numerical id.</p>
+
+<h3 id="block.name">block.name</h3>
+
+<h3 id="block.displayname">block.displayName</h3>
+
+<h3 id="block.metadata">block.metadata</h3>
+
+<p>Number which represents different things depending on the block.
+See http://www.minecraftwiki.net/wiki/Data_values#Data</p>
+
+<h3 id="block.light">block.light</h3>
+
+<h3 id="block.skylight">block.skyLight</h3>
+
+<h3 id="block.hardness">block.hardness</h3>
+
+<h3 id="block.biome">block.biome</h3>
+
+<p>A biome instance. See <code class="prettyprint">Biome</code>.</p>
+
+<h3 id="block.signtext">block.signText</h3>
+
+<p>If the block is a sign, contains the sign text.</p>
+
+<h3 id="block.painting">block.painting</h3>
+
+<p>If the block is a painting, contains information about the painting.</p>
+
+<ul>
+<li><code class="prettyprint">id</code></li>
+<li><code class="prettyprint">position</code></li>
+<li><code class="prettyprint">name</code></li>
+<li><code class="prettyprint">direction</code> - direction vector telling how the painting is facing.</li>
+</ul>
+
+<h3 id="block.diggable">block.diggable</h3>
+
+<p>Boolean, whether the block is considered diggable.</p>
+
+<h3 id="block.boundingbox">block.boundingBox</h3>
+
+<p>The shape of the block according to the physics engine&rsquo;s collision decection. Currently one of:</p>
+
+<ul>
+<li><code class="prettyprint">block</code> - currently, partially solid blocks, such as half-slabs and ladders, are considered entirely solid.</li>
+<li><code class="prettyprint">empty</code> - such as flowers and lava.</li>
+</ul>
+
+<h3 id="block.material">block.material</h3>
+
+<p>This tells what types of tools will be effective against the block. Possible
+values are: <code class="prettyprint">null</code>, <code class="prettyprint">rock</code>, <code class="prettyprint">wood</code>, <code class="prettyprint">plant</code>, <code class="prettyprint">melon</code>, <code class="prettyprint">leaves</code>, <code class="prettyprint">dirt</code>, <code class="prettyprint">web</code>, and <code class="prettyprint">wool</code>.</p>
+
+<p>See http://www.minecraftwiki.net/wiki/Digging and the <code class="prettyprint">toolMultipliers</code>
+variable at the top of lib/plugins/digging.js for more info.</p>
+
+<h3 id="block.harvesttools">block.harvestTools</h3>
+
+<p>The set of tools that will allow you to harvest the block.</p>
+
+<h3 id="block.drops">block.drops</h3>
+
+<p>The blocks or items dropped by that block.</p>
+
+<h2 id="mineflayer.biome">mineflayer.Biome</h2>
+
+<h3 id="biome.id">biome.id</h3>
+
+<p>Numerical id.</p>
+
+<h3 id="biome.color">biome.color</h3>
+
+<h3 id="biome.height">biome.height</h3>
+
+<h3 id="biome.name">biome.name</h3>
+
+<h3 id="biome.rainfall">biome.rainfall</h3>
+
+<h3 id="biome.temperature">biome.temperature</h3>
+
+<h2 id="mineflayer.item">mineflayer.Item</h2>
+
+<h3 id="item.type">item.type</h3>
+
+<p>Numerical id.</p>
+
+<h3 id="item.count">item.count</h3>
+
+<h3 id="item.metadata">item.metadata</h3>
+
+<p>Number which represents different things depending on the item.
+See http://www.minecraftwiki.net/wiki/Data_values#Data</p>
+
+<h3 id="item.nbt">item.nbt</h3>
+
+<p>Buffer.</p>
+
+<h3 id="item.name">item.name</h3>
+
+<h3 id="item.displayname">item.displayName</h3>
+
+<h3 id="item.stacksize">item.stackSize</h3>
+
+<h2 id="mineflayer.windows.window-(base-class)">mineflayer.windows.Window (base class)</h2>
+
+<h3 id="window.id">window.id</h3>
+
+<h3 id="window.type">window.type</h3>
+
+<h3 id="window.title">window.title</h3>
+
+<p>&ldquo;Inventory&rdquo;, &ldquo;Chest&rdquo;, &ldquo;Large chest&rdquo;, &ldquo;Crafting&rdquo;, &ldquo;Furnace&rdquo;, or &ldquo;Trap&rdquo;</p>
+
+<h3 id="window.slots">window.slots</h3>
+
+<p>Map of slot index to <code class="prettyprint">Item</code> instance.</p>
+
+<h3 id="window.selecteditem">window.selectedItem</h3>
+
+<p>In vanilla client, this is the item you are holding with the mouse cursor.</p>
+
+<h3 id="window.findinventoryitem(itemtype,-metadata,-[notfull])">window.findInventoryItem(itemType, metadata, [notFull])</h3>
+
+<ul>
+<li><code class="prettyprint">itemType</code> - numerical id that you are looking for</li>
+<li><code class="prettyprint">metadata</code> -  metadata value that you are looking for. <code class="prettyprint">null</code>
+means unspecified.</li>
+<li><code class="prettyprint">notFull</code> - (optional) - if <code class="prettyprint">true</code>, means that the returned
+item should not be at its <code class="prettyprint">stackSize</code>.</li>
+</ul>
+
+<h3 id="window.count(itemtype,-[metadata])">window.count(itemType, [metadata])</h3>
+
+<p>Returns how many you have in the inventory section of the window.</p>
+
+<ul>
+<li><code class="prettyprint">itemType</code> - numerical id that you are looking for</li>
+<li><code class="prettyprint">metadata</code> - (optional) metadata value that you are looking for.
+defaults to unspecified</li>
+</ul>
+
+<h3 id="window.items()">window.items()</h3>
+
+<p>Returns a list of <code class="prettyprint">Item</code> instances from the inventory section of the window.</p>
+
+<h3 id="window.emptyslotcount()">window.emptySlotCount()</h3>
+
+<h3 id="window-&quot;windowupdate&quot;-(slot,-olditem,-newitem)">window &ldquo;windowUpdate&rdquo; (slot, oldItem, newItem)</h3>
+
+<p>Fired whenever any slot in the window changes for any reason.
+Watching <code class="prettyprint">bot.inventory.on(&quot;windowUpdate&quot;)</code> is the best way to watch for changes in your inventory.</p>
+
+<ul>
+<li><code class="prettyprint">slot</code> - index of changed slot.</li>
+<li><code class="prettyprint">oldItem</code>, <code class="prettyprint">newItem</code> - either an <a href="#mineflayeritem"><code class="prettyprint">Item</code></a> instance or <code class="prettyprint">null</code>.</li>
+</ul>
+
+<p><code class="prettyprint">newItem === window.slots[slot]</code>.</p>
+
+<h2 id="mineflayer.windows.inventorywindow">mineflayer.windows.InventoryWindow</h2>
+
+<h2 id="mineflayer.windows.chestwindow">mineflayer.windows.ChestWindow</h2>
+
+<h2 id="mineflayer.windows.craftingtablewindow">mineflayer.windows.CraftingTableWindow</h2>
+
+<h2 id="mineflayer.windows.furnacewindow">mineflayer.windows.FurnaceWindow</h2>
+
+<h2 id="mineflayer.windows.dispenserwindow">mineflayer.windows.DispenserWindow</h2>
+
+<h2 id="mineflayer.windows.enchantmenttablewindow">mineflayer.windows.EnchantmentTableWindow</h2>
+
+<h2 id="mineflayer.windows.brewingstandwindow">mineflayer.windows.BrewingStandWindow</h2>
+
+<h2 id="mineflayer.recipe">mineflayer.Recipe</h2>
+
+<h3 id="recipe.find(itemtype,-[metadata])">Recipe.find(itemType, [metadata])</h3>
+
+<p>Returns a list of matching <code class="prettyprint">Recipe</code> instances.</p>
+
+<ul>
+<li><code class="prettyprint">itemType</code> - numerical id</li>
+<li><code class="prettyprint">metadata</code> - metadata to match. <code class="prettyprint">null</code> means match anything.</li>
+</ul>
+
+<h3 id="recipe.result">recipe.result</h3>
+
+<p>The output item. It&rsquo;s a recipeItem :
+<code class="prettyprint">js
+{
+  id:45,
+  metadata:3,
+  count:1
+}
+</code></p>
+
+<h3 id="recipe.inshape">recipe.inShape</h3>
+
+<p>Looks like this:</p>
+<pre class="highlight javascript"><code><span class="p">[</span>
+  <span class="p">[</span><span class="nx">recipeItem</span><span class="p">,</span> <span class="nx">recipeItem</span><span class="p">],</span>
+  <span class="p">[</span><span class="nx">recipeItem</span><span class="p">,</span> <span class="nx">recipeItem</span><span class="p">],</span>
+  <span class="p">[</span><span class="nx">recipeItem</span><span class="p">,</span> <span class="nx">recipeItem</span><span class="p">],</span>
+<span class="p">]</span>
+</code></pre>
+
+<h3 id="recipe.outshape">recipe.outShape</h3>
+
+<p>Looks the same as <code class="prettyprint">inShape</code>. Only relevant for cake.</p>
+
+<h3 id="recipe.ingredients">recipe.ingredients</h3>
+
+<p>List of shape-independent ingredients. Looks like this:</p>
+<pre class="highlight javascript"><code><span class="p">[</span>
+  <span class="nx">recipeItem</span><span class="p">,</span>
+  <span class="nx">recipeItem</span>
+<span class="p">]</span>
+</code></pre>
+
+<h3 id="recipe.requirestable">recipe.requiresTable</h3>
+
+<p>Boolean.</p>
+
+<h3 id="recipe.delta">recipe.delta</h3>
+
+<p>Map of item type to how much more or less you will have after you use
+the recipe.</p>
+
+<p>This is what it looks like for the chest recipe:</p>
+<pre class="highlight javascript"><code><span class="p">[</span>
+  <span class="nx">recipeItem</span><span class="p">,</span>
+  <span class="nx">recipeItem</span>
+<span class="p">]</span>
+</code></pre>
+
+<h2 id="mineflayer.chest">mineflayer.Chest</h2>
+
+<p>Represents a single session of opening and closing a chest.
+See <code class="prettyprint">bot.openChest(chestBlock)</code>.</p>
+
+<h3 id="chest.window">chest.window</h3>
+
+<p>If the chest is open, this property is a <code class="prettyprint">ChestWindow</code> instance.
+If the chest is closed, this property is <code class="prettyprint">null</code>.</p>
+
+<h3 id="chest-&quot;open&quot;">chest &ldquo;open&rdquo;</h3>
+
+<p>Fires when the chest has successfully been opened.</p>
+
+<h3 id="chest-&quot;close&quot;">chest &ldquo;close&rdquo;</h3>
+
+<p>Fires when the chest closes.</p>
+
+<h3 id="chest-&quot;updateslot&quot;-(olditem,-newitem)">chest &ldquo;updateSlot&rdquo; (oldItem, newItem)</h3>
+
+<p>Fires when the chest you are looking at is updated.</p>
+
+<h3 id="chest.close()">chest.close()</h3>
+
+<h3 id="chest.deposit(itemtype,-metadata,-count,-[callback])">chest.deposit(itemType, metadata, count, [callback])</h3>
+
+<ul>
+<li><code class="prettyprint">itemType</code> - numerical item id</li>
+<li><code class="prettyprint">metadata</code> - numerical value. <code class="prettyprint">null</code> means match anything.</li>
+<li><code class="prettyprint">count</code> - how many to deposit. <code class="prettyprint">null</code> is an alias to 1.</li>
+<li><code class="prettyprint">callback(err)</code> - (optional) - called when done depositing</li>
+</ul>
+
+<h3 id="chest.withdraw(itemtype,-metadata,-count,-[callback])">chest.withdraw(itemType, metadata, count, [callback])</h3>
+
+<ul>
+<li><code class="prettyprint">itemType</code> - numerical item id</li>
+<li><code class="prettyprint">metadata</code> - numerical value. <code class="prettyprint">null</code> means match anything.</li>
+<li><code class="prettyprint">count</code> - how many to withdraw. <code class="prettyprint">null</code> is an alias to 1.</li>
+<li><code class="prettyprint">callback(err)</code> - (optional) - called when done withdrawing</li>
+</ul>
+
+<h3 id="chest.count(itemtype,-[metadata])">chest.count(itemType, [metadata])</h3>
+
+<p>Return how many of a certain type of item are in the chest.</p>
+
+<ul>
+<li><code class="prettyprint">itemType</code> - numerical item id</li>
+<li><code class="prettyprint">metadata</code> - (optional) numerical value. <code class="prettyprint">null</code> means match anything.</li>
+</ul>
+
+<h3 id="chest.items()">chest.items()</h3>
+
+<p>Returns a list of <code class="prettyprint">Item</code> instances from the chest.</p>
+
+<h2 id="mineflayer.furnace">mineflayer.Furnace</h2>
+
+<p>See <code class="prettyprint">bot.openFurnace(furnaceBlock)</code>.</p>
+
+<h3 id="furnace-&quot;open&quot;">furnace &ldquo;open&rdquo;</h3>
+
+<p>Fires when the furnace has successfully been opened.</p>
+
+<h3 id="furnace-&quot;close&quot;">furnace &ldquo;close&rdquo;</h3>
+
+<p>Fires when the furnace closes.</p>
+
+<h3 id="furnace-&quot;update&quot;">furnace &ldquo;update&rdquo;</h3>
+
+<p>Fires when <code class="prettyprint">furnace.fuel</code> and/or <code class="prettyprint">furnace.progress</code> update.</p>
+
+<h3 id="furnace-&quot;updateslot&quot;-(olditem,-newitem)">furnace &ldquo;updateSlot&rdquo; (oldItem, newItem)</h3>
+
+<p>Fires when a slot in the furnace you have open has updated.</p>
+
+<h3 id="furnace.close()">furnace.close()</h3>
+
+<h3 id="furnace.takeinput([callback])">furnace.takeInput([callback])</h3>
+
+<ul>
+<li><code class="prettyprint">callback(err, item)</code></li>
+</ul>
+
+<h3 id="furnace.takefuel([callback])">furnace.takeFuel([callback])</h3>
+
+<ul>
+<li><code class="prettyprint">callback(err, item)</code></li>
+</ul>
+
+<h3 id="furnace.takeoutput([callback])">furnace.takeOutput([callback])</h3>
+
+<ul>
+<li><code class="prettyprint">callback(err, item)</code></li>
+</ul>
+
+<h3 id="furnace.putinput(itemtype,-metadata,-count,-[cb])">furnace.putInput(itemType, metadata, count, [cb])</h3>
+
+<h3 id="furnace.putfuel(itemtype,-metadata,-count,-[cb])">furnace.putFuel(itemType, metadata, count, [cb])</h3>
+
+<h3 id="furnace.inputitem()">furnace.inputItem()</h3>
+
+<p>Returns <code class="prettyprint">Item</code> instance which is the input.</p>
+
+<h3 id="furnace.fuelitem()">furnace.fuelItem()</h3>
+
+<p>Returns <code class="prettyprint">Item</code> instance which is the fuel.</p>
+
+<h3 id="furnace.outputitem()">furnace.outputItem()</h3>
+
+<p>Returns <code class="prettyprint">Item</code> instance which is the output.</p>
+
+<h3 id="furnace.fuel">furnace.fuel</h3>
+
+<p>How much fuel is left between 0 and 1.</p>
+
+<h3 id="furnace.progress">furnace.progress</h3>
+
+<p>How much cooked the input is between 0 and 1.</p>
+
+<h2 id="mineflayer.dispenser">mineflayer.Dispenser</h2>
+
+<p>See <code class="prettyprint">bot.openDispenser(dispenserBlock)</code>.</p>
+
+<h3 id="dispenser-&quot;open&quot;">dispenser &ldquo;open&rdquo;</h3>
+
+<p>Fires when the dispenser has successfully been opened.</p>
+
+<h3 id="dispenser-&quot;close&quot;">dispenser &ldquo;close&rdquo;</h3>
+
+<p>Fires when the dispenser closes.</p>
+
+<h3 id="dispenser-&quot;updateslot&quot;-(olditem,-newitem)">dispenser &ldquo;updateSlot&rdquo; (oldItem, newItem)</h3>
+
+<p>Fires when a slot in the dispenser you have open has updated.</p>
+
+<h3 id="dispenser.close()">dispenser.close()</h3>
+
+<h3 id="dispenser.items()">dispenser.items()</h3>
+
+<p>Returns a list of <code class="prettyprint">Item</code> instances from the dispenser.</p>
+
+<h3 id="dispenser.deposit(itemtype,-metadata,-count,-[callback])">dispenser.deposit(itemType, metadata, count, [callback])</h3>
+
+<ul>
+<li><code class="prettyprint">itemType</code> - numerical item id</li>
+<li><code class="prettyprint">metadata</code> - numerical value. <code class="prettyprint">null</code> means match anything.</li>
+<li><code class="prettyprint">count</code> - how many to deposit. <code class="prettyprint">null</code> is an alias to 1.</li>
+<li><code class="prettyprint">callback(err)</code> - (optional) - called when done depositing</li>
+</ul>
+
+<h3 id="dispenser.withdraw(itemtype,-metadata,-count,-[callback])">dispenser.withdraw(itemType, metadata, count, [callback])</h3>
+
+<ul>
+<li><code class="prettyprint">itemType</code> - numerical item id</li>
+<li><code class="prettyprint">metadata</code> - numerical value. <code class="prettyprint">null</code> means match anything.</li>
+<li><code class="prettyprint">count</code> - how many to withdraw. <code class="prettyprint">null</code> is an alias to 1.</li>
+<li><code class="prettyprint">callback(err)</code> - (optional) - called when done withdrawing</li>
+</ul>
+
+<h3 id="dispenser.count(itemtype,-[metadata])">dispenser.count(itemType, [metadata])</h3>
+
+<p>Return how many of a certain type of item are in the dispenser.</p>
+
+<ul>
+<li><code class="prettyprint">itemType</code> - numerical item id</li>
+<li><code class="prettyprint">metadata</code> - (optional) numerical value. <code class="prettyprint">null</code> means match anything.</li>
+</ul>
+
+<h2 id="mineflayer.enchantmenttable">mineflayer.EnchantmentTable</h2>
+
+<p>See <code class="prettyprint">bot.openEnchantmentTable(enchantmentTableBlock)</code>.</p>
+
+<h3 id="enchantmenttable-&quot;open&quot;">enchantmentTable &ldquo;open&rdquo;</h3>
+
+<p>Fires when the enchantment table has successfully been opened.</p>
+
+<h3 id="enchantmenttable-&quot;close&quot;">enchantmentTable &ldquo;close&rdquo;</h3>
+
+<p>Fires when the enchantment table closes.</p>
+
+<h3 id="enchantmenttable-&quot;updateslot&quot;-(olditem,-newitem)">enchantmentTable &ldquo;updateSlot&rdquo; (oldItem, newItem)</h3>
+
+<p>Fires when a slot in the enchantment table you have open has updated.</p>
+
+<h3 id="enchantmenttable-&quot;ready&quot;">enchantmentTable &ldquo;ready&rdquo;</h3>
+
+<p>Fires when <code class="prettyprint">enchantmentTable.enchantments</code> is fully populated and you
+may make a selection by calling <code class="prettyprint">enchantmentTable.enchant(choice)</code>.</p>
+
+<h3 id="enchantmenttable.close()">enchantmentTable.close()</h3>
+
+<h3 id="enchantmenttable.targetitem()">enchantmentTable.targetItem()</h3>
+
+<p>Gets the target item. This is both the input and the output of the
+enchantment table.</p>
+
+<h3 id="enchantmenttable.enchantments">enchantmentTable.enchantments</h3>
+
+<p>Array of length 3 which are the 3 enchantments to choose from.
+<code class="prettyprint">level</code> can be <code class="prettyprint">null</code> if the server has not sent the data yet.</p>
+
+<p>Looks like:</p>
+<pre class="highlight javascript"><code><span class="p">[</span>
+  <span class="p">{</span>
+    <span class="s2">"level"</span><span class="p">:</span> <span class="mi">3</span>
+  <span class="p">},</span>
+  <span class="p">{</span>
+    <span class="s2">"level"</span><span class="p">:</span> <span class="mi">4</span>
+  <span class="p">},</span>
+  <span class="p">{</span>
+    <span class="s2">"level"</span><span class="p">:</span> <span class="mi">9</span>
+  <span class="p">}</span>
+<span class="p">]</span>
+</code></pre>
+
+<h3 id="enchantmenttable.enchant(choice,-[callback])">enchantmentTable.enchant(choice, [callback])</h3>
+
+<ul>
+<li><code class="prettyprint">choice</code> - [0-2], the index of the enchantment you want to pick.</li>
+<li><code class="prettyprint">callback(err, item)</code> - (optional) called when the item has been enchanted</li>
+</ul>
+
+<h3 id="enchantmenttable.taketargetitem([callback])">enchantmentTable.takeTargetItem([callback])</h3>
+
+<ul>
+<li><code class="prettyprint">callback(err, item)</code></li>
+</ul>
+
+<h3 id="enchantmenttable.puttargetitem(item,-[callback])">enchantmentTable.putTargetItem(item, [callback])</h3>
+
+<ul>
+<li><code class="prettyprint">callback(err)</code></li>
+</ul>
+
+<h1 id="bot">Bot</h1>
+
+<h2 id="properties">Properties</h2>
+
+<h3 id="bot.entity">bot.entity</h3>
+
+<p>Your own entity. See <code class="prettyprint">Entity</code>.</p>
+
+<h3 id="bot.entities">bot.entities</h3>
+
+<p>All nearby entities. This object is a map of entityId to entity.</p>
+
+<h3 id="bot.username">bot.username</h3>
+
+<p>Use this to find out your own name.</p>
+
+<h3 id="bot.spawnpoint">bot.spawnPoint</h3>
+
+<p>Coordinates to the main spawn point, where all compasses point to.</p>
+
+<h3 id="bot.game.leveltype">bot.game.levelType</h3>
+
+<h3 id="bot.game.dimension">bot.game.dimension</h3>
+
+<h3 id="bot.game.difficulty">bot.game.difficulty</h3>
+
+<h3 id="bot.game.gamemode">bot.game.gameMode</h3>
+
+<h3 id="bot.game.hardcore">bot.game.hardcore</h3>
+
+<h3 id="bot.game.worldheight">bot.game.worldHeight</h3>
+
+<h3 id="bot.game.maxplayers">bot.game.maxPlayers</h3>
+
+<h3 id="bot.players">bot.players</h3>
+
+<p>Map of username to people playing the game. A player looks like this:</p>
+<pre class="highlight javascript"><code><span class="p">{</span>
+  <span class="nl">username</span><span class="p">:</span> <span class="s1">'player'</span><span class="p">,</span>
+  <span class="nx">ping</span><span class="err">:</span> <span class="mi">28</span><span class="p">,</span>
+  <span class="nx">entity</span><span class="err">:</span> <span class="nx">entity</span><span class="p">,</span> <span class="c1">// null if you are too far away</span>
+<span class="p">}</span>
+</code></pre>
+
+<h3 id="bot.israining">bot.isRaining</h3>
+
+<h3 id="bot.chatpatterns">bot.chatPatterns</h3>
+
+<p>This is an array of pattern objects, of the following format:
+{ /regex/, &ldquo;chattype&rdquo;, &ldquo;description&rdquo;)
+ * /regex/ - a regular expression pattern, that should have at least two capture groups
+ * &lsquo;chattype&rsquo; - the type of chat the pattern matches, ex &ldquo;chat&rdquo; or &ldquo;whisper&rdquo;, but can be anything.
+ * &#39;description&rsquo; - description of what the pattern is for, optional.</p>
+
+<h3 id="bot.settings.chat">bot.settings.chat</h3>
+
+<p>Choices:</p>
+
+<ul>
+<li><code class="prettyprint">enabled</code> (default)</li>
+<li><code class="prettyprint">commandsOnly</code></li>
+<li><code class="prettyprint">disabled</code></li>
+</ul>
+
+<h3 id="bot.settings.colorsenabled">bot.settings.colorsEnabled</h3>
+
+<p>Default true, whether or not you receive color codes in chats from the server.</p>
+
+<h3 id="bot.settings.viewdistance">bot.settings.viewDistance</h3>
+
+<p>Choices:
+ * <code class="prettyprint">far</code> (default)
+ * <code class="prettyprint">normal</code>
+ * <code class="prettyprint">short</code>
+ * <code class="prettyprint">tiny</code></p>
+
+<h3 id="bot.settings.difficulty">bot.settings.difficulty</h3>
+
+<p>Same as from server.properties.</p>
+
+<h3 id="bot.settings.showcape">bot.settings.showCape</h3>
+
+<p>If you have a cape you can turn it off by setting this to false.</p>
+
+<h3 id="bot.experience.level">bot.experience.level</h3>
+
+<h3 id="bot.experience.points">bot.experience.points</h3>
+
+<p>Total experience points.</p>
+
+<h3 id="bot.experience.progress">bot.experience.progress</h3>
+
+<p>Between 0 and 1 - amount to get to the next level.</p>
+
+<h3 id="bot.health">bot.health</h3>
+
+<p>Number in the range [0, 20] representing the number of half-hearts.</p>
+
+<h3 id="bot.food">bot.food</h3>
+
+<p>Number, in the range [0, 20] representing the number of half-turkey-legs.</p>
+
+<h3 id="bot.foodsaturation">bot.foodSaturation</h3>
+
+<p>Food saturation acts as a food &ldquo;overcharge&rdquo;. Food values will not decrease
+while the saturation is over zero. Players logging in automatically get a
+saturation of 5.0. Eating food increases the saturation as well as the food bar.</p>
+
+<h3 id="bot.physics">bot.physics</h3>
+
+<p>Edit these numbers to tweak gravity, jump speed, terminal velocity, etc.
+Do this at your own risk.</p>
+
+<h3 id="bot.time.day">bot.time.day</h3>
+
+<p>Time of the day, in ticks.</p>
+
+<p>Time is based on ticks, where 20 ticks happen every second. There are 24000
+ticks in a day, making Minecraft days exactly 20 minutes long.</p>
+
+<p>The time of day is based on the timestamp modulo 24000. 0 is sunrise, 6000
+is noon, 12000 is sunset, and 18000 is midnight.</p>
+
+<h3 id="bot.time.age">bot.time.age</h3>
+
+<p>Age of the world, in ticks.</p>
+
+<h3 id="bot.quickbarslot">bot.quickBarSlot</h3>
+
+<p>Which quick bar slot is selected (0 - 8).</p>
+
+<h3 id="bot.inventory">bot.inventory</h3>
+
+<p>A <code class="prettyprint">Window</code> instance representing your inventory.</p>
+
+<h3 id="bot.targetdigblock">bot.targetDigBlock</h3>
+
+<p>The <code class="prettyprint">block</code> that you are currently digging, or <code class="prettyprint">null</code>.</p>
+
+<h3 id="bot.issleeping">bot.isSleeping</h3>
+
+<p>Boolean, whether or not you are in bed.</p>
+
+<h2 id="events">Events</h2>
+
+<h3 id="&quot;chat&quot;-(username,-message,-translate,-jsonmsg,-matches)">&ldquo;chat&rdquo; (username, message, translate, jsonMsg, matches)</h3>
+
+<p>Only emitted when a player chats publicly.</p>
+
+<ul>
+<li><code class="prettyprint">username</code> - who said the message (compare with <code class="prettyprint">bot.username</code> to ignore your own chat)</li>
+<li><code class="prettyprint">message</code> - stripped of all color and control characters</li>
+<li><code class="prettyprint">translate</code> - chat message type. Null for most bukkit chat messages</li>
+<li><code class="prettyprint">jsonMsg</code> - unmodified JSON message from the server</li>
+<li><code class="prettyprint">matches</code> - array of returned matches from regular expressions. May be null</li>
+</ul>
+
+<h3 id="&quot;whisper&quot;-(username,-message,-translate,-jsonmsg,-matches)">&ldquo;whisper&rdquo; (username, message, translate, jsonMsg, matches)</h3>
+
+<p>Only emitted when a player chats to you privately.</p>
+
+<ul>
+<li><code class="prettyprint">username</code> - who said the message</li>
+<li><code class="prettyprint">message</code> - stripped of all color and control characters</li>
+<li><code class="prettyprint">translate</code> - chat message type. Null for most bukkit chat messages</li>
+<li><code class="prettyprint">jsonMsg</code> - unmodified JSON message from the server</li>
+<li><code class="prettyprint">matches</code> - array of returned matches from regular expressions. May be null</li>
+</ul>
+
+<h3 id="&quot;message&quot;-(jsonmsg)">&ldquo;message&rdquo; (jsonMsg)</h3>
+
+<p>Emitted for every server message, including chats.</p>
+
+<ul>
+<li><code class="prettyprint">jsonMsg</code> - unmodified JSON message from the server</li>
+</ul>
+
+<h3 id="&quot;login&quot;">&ldquo;login&rdquo;</h3>
+
+<p>Fires after you successfully login to the server.
+You probably want to wait for the <code class="prettyprint">spawn</code> event
+before doing anything though.</p>
+
+<h3 id="&quot;spawn&quot;">&ldquo;spawn&rdquo;</h3>
+
+<p>Emitted once after you log in and spawn for the first time
+and then emitted when you respawn after death.</p>
+
+<p>This is usually the event that you want to listen to
+before doing anything on the server.</p>
+
+<h3 id="&quot;respawn&quot;">&ldquo;respawn&rdquo;</h3>
+
+<p>Emitted when you change dimensions and just before you spawn.
+Usually you want to ignore this event and wait until the &ldquo;spawn&rdquo;
+event instead.</p>
+
+<h3 id="&quot;game&quot;">&ldquo;game&rdquo;</h3>
+
+<p>Emitted when the server changes any of the game properties.</p>
+
+<h3 id="&quot;rain&quot;">&ldquo;rain&rdquo;</h3>
+
+<p>Emitted when it starts or stops raining. If you join a
+server where it is already raining, this event will fire.</p>
+
+<h3 id="&quot;time&quot;">&ldquo;time&rdquo;</h3>
+
+<p>Emitted when the server sends a time update. See <code class="prettyprint">bot.time</code>.</p>
+
+<h3 id="&quot;kicked&quot;-(reason)">&ldquo;kicked&rdquo; (reason)</h3>
+
+<p>Emitted when the bot is kicked from the server. <code class="prettyprint">reason</code>
+is a string explaining why you were kicked.</p>
+
+<h3 id="&quot;end&quot;">&ldquo;end&rdquo;</h3>
+
+<p>Emitted when you are no longer connected to the server.</p>
+
+<h3 id="&quot;spawnreset&quot;">&ldquo;spawnReset&rdquo;</h3>
+
+<p>Fires when you cannot spawn in your bed and your spawn point gets reset.</p>
+
+<h3 id="&quot;death&quot;">&ldquo;death&rdquo;</h3>
+
+<p>Fires when you die.</p>
+
+<h3 id="&quot;health&quot;">&ldquo;health&rdquo;</h3>
+
+<p>Fires when your hp or food change.</p>
+
+<h3 id="&quot;entityswingarm&quot;-(entity)">&ldquo;entitySwingArm&rdquo; (entity)</h3>
+
+<h3 id="&quot;entityhurt&quot;-(entity)">&ldquo;entityHurt&rdquo; (entity)</h3>
+
+<h3 id="&quot;entitywake&quot;-(entity)">&ldquo;entityWake&rdquo; (entity)</h3>
+
+<h3 id="&quot;entityeat&quot;-(entity)">&ldquo;entityEat&rdquo; (entity)</h3>
+
+<h3 id="&quot;entitycrouch&quot;-(entity)">&ldquo;entityCrouch&rdquo; (entity)</h3>
+
+<h3 id="&quot;entityuncrouch&quot;-(entity)">&ldquo;entityUncrouch&rdquo; (entity)</h3>
+
+<h3 id="&quot;entityequipmentchange&quot;-(entity)">&ldquo;entityEquipmentChange&rdquo; (entity)</h3>
+
+<h3 id="&quot;entitysleep&quot;-(entity)">&ldquo;entitySleep&rdquo; (entity)</h3>
+
+<h3 id="&quot;entityspawn&quot;-(entity)">&ldquo;entitySpawn&rdquo; (entity)</h3>
+
+<h3 id="&quot;playercollect&quot;-(collector,-collected)">&ldquo;playerCollect&rdquo; (collector, collected)</h3>
+
+<p>An entity picked up an item.</p>
+
+<ul>
+<li><code class="prettyprint">collector</code> - entity that picked up the item.</li>
+<li><code class="prettyprint">collected</code> - the entity that was the item on the ground.</li>
+</ul>
+
+<h3 id="&quot;entitygone&quot;-(entity)">&ldquo;entityGone&rdquo; (entity)</h3>
+
+<h3 id="&quot;entitymoved&quot;-(entity)">&ldquo;entityMoved&rdquo; (entity)</h3>
+
+<h3 id="&quot;entitydetach&quot;-(entity,-vehicle)">&ldquo;entityDetach&rdquo; (entity, vehicle)</h3>
+
+<h3 id="&quot;entityattach&quot;-(entity,-vehicle)">&ldquo;entityAttach&rdquo; (entity, vehicle)</h3>
+
+<p>An entity is attached to a vehicle, such as a mine cart
+or boat.</p>
+
+<ul>
+<li><code class="prettyprint">entity</code> - the entity hitching a ride</li>
+<li><code class="prettyprint">vehicle</code> - the entity that is the vehicle</li>
+</ul>
+
+<h3 id="&quot;entityupdate&quot;-(entity)">&ldquo;entityUpdate&rdquo; (entity)</h3>
+
+<h3 id="&quot;entityeffect&quot;-(entity,-effect)">&ldquo;entityEffect&rdquo; (entity, effect)</h3>
+
+<h3 id="&quot;entityeffectend&quot;-(entity,-effect)">&ldquo;entityEffectEnd&rdquo; (entity, effect)</h3>
+
+<h3 id="&quot;playerjoined&quot;-(player)">&ldquo;playerJoined&rdquo; (player)</h3>
+
+<h3 id="&quot;playerleft&quot;-(player)">&ldquo;playerLeft&rdquo; (player)</h3>
+
+<h3 id="&quot;blockupdate&quot;-(oldblock,-newblock)">&ldquo;blockUpdate&rdquo; (oldBlock, newBlock)</h3>
+
+<p>Fires when a block updates. Both <code class="prettyprint">oldBlock</code> and <code class="prettyprint">newBlock</code> provided for
+comparison.</p>
+
+<p>Note that <code class="prettyprint">oldBlock</code> may be <code class="prettyprint">null</code>.</p>
+
+<h3 id="&quot;blockupdate:(x,-y,-z)&quot;-(oldblock,-newblock)">&ldquo;blockUpdate:(x, y, z)&rdquo; (oldBlock, newBlock)</h3>
+
+<p>Fires for a specific point. Both <code class="prettyprint">oldBlock</code> and <code class="prettyprint">newBlock</code> provided for
+comparison.</p>
+
+<p>Note that <code class="prettyprint">oldBlock</code> may be <code class="prettyprint">null</code>.</p>
+
+<h3 id="&quot;chunkcolumnload&quot;-(point)">&ldquo;chunkColumnLoad&rdquo; (point)</h3>
+
+<h3 id="&quot;chunkcolumnunload&quot;-(point)">&ldquo;chunkColumnUnload&rdquo; (point)</h3>
+
+<p>Fires when a chunk has updated. <code class="prettyprint">point</code> is the coordinates to the corner
+of the chunk with the smallest x, y, and z values.</p>
+
+<h3 id="&quot;soundeffectheard&quot;-(soundname,-position,-volume,-pitch)">&ldquo;soundEffectHeard&rdquo; (soundName, position, volume, pitch)</h3>
+
+<p>Fires when the client hears a sound effect.</p>
+
+<ul>
+<li><code class="prettyprint">soundName</code>: name of the sound effect</li>
+<li><code class="prettyprint">position</code>: a Vec3 instance where the sound originates</li>
+<li><code class="prettyprint">volume</code>: floating point volume, 1.0 is 100%</li>
+<li><code class="prettyprint">pitch</code>: integer pitch, 63 is 100%</li>
+</ul>
+
+<h3 id="&quot;noteheard&quot;-(block,-instrument,-pitch)">&ldquo;noteHeard&rdquo; (block, instrument, pitch)</h3>
+
+<p>Fires when a note block goes off somewhere.</p>
+
+<ul>
+<li><code class="prettyprint">block</code>: a Block instance, the block at emitted the noise</li>
+<li><code class="prettyprint">instrument</code>:
+
+<ul>
+<li><code class="prettyprint">id</code>: integer id</li>
+<li><code class="prettyprint">name</code>: one of [<code class="prettyprint">harp</code>, <code class="prettyprint">doubleBass</code>, <code class="prettyprint">snareDrum</code>, <code class="prettyprint">sticks</code>, <code class="prettyprint">bassDrum</code>].</li>
+</ul></li>
+<li><code class="prettyprint">pitch</code>: The pitch of the note (between 0-24 inclusive where 0 is the
+lowest and 24 is the highest). More information about how the pitch values
+correspond to notes in real life are available on the
+<a href="http://www.minecraftwiki.net/wiki/Note_Block">official Minecraft wiki</a>.</li>
+</ul>
+
+<h3 id="&quot;pistonmove&quot;-(block,-ispulling,-direction)">&ldquo;pistonMove&rdquo; (block, isPulling, direction)</h3>
+
+<h3 id="&quot;chestlidmove&quot;-(block,-isopen)">&ldquo;chestLidMove&rdquo; (block, isOpen)</h3>
+
+<h3 id="&quot;blockbreakprogressobserved&quot;-(block,-destroystage)">&ldquo;blockBreakProgressObserved&rdquo; (block, destroyStage)</h3>
+
+<p>Fires when the client observes a block in the process of being broken.</p>
+
+<ul>
+<li><code class="prettyprint">block</code>: a Block instance, the block being broken</li>
+<li><code class="prettyprint">destroyStage</code>: integer corresponding to the destroy progress (0-9)</li>
+</ul>
+
+<h3 id="&quot;blockbreakprogressend&quot;-(block)">&ldquo;blockBreakProgressEnd&rdquo; (block)</h3>
+
+<p>Fires when the client observes a block stops being broken.
+This occurs whether the process was completed or aborted.</p>
+
+<ul>
+<li><code class="prettyprint">block</code>: a Block instance, the block no longer being broken</li>
+</ul>
+
+<h3 id="&quot;diggingcompleted&quot;-(block)">&ldquo;diggingCompleted&rdquo; (block)</h3>
+
+<ul>
+<li><code class="prettyprint">block</code> - the block that no longer exists</li>
+</ul>
+
+<h3 id="&quot;diggingaborted&quot;-(block)">&ldquo;diggingAborted&rdquo; (block)</h3>
+
+<ul>
+<li><code class="prettyprint">block</code> - the block that still exists</li>
+</ul>
+
+<h3 id="&quot;move&quot;">&ldquo;move&rdquo;</h3>
+
+<p>Fires when the bot moves. If you want the current position, use
+<code class="prettyprint">bot.entity.position</code> and if you want the previous position, use
+<code class="prettyprint">bot.entity.position.minus(bot.entity.velocity)</code>.</p>
+
+<h3 id="&quot;mount&quot;">&ldquo;mount&rdquo;</h3>
+
+<p>Fires when you mount an entity such as a minecart. To get access
+to the entity, use <code class="prettyprint">bot.vehicle</code>.</p>
+
+<p>To mount an entity, use <code class="prettyprint">mount</code>.</p>
+
+<h3 id="&quot;dismount&quot;-(vehicle)">&ldquo;dismount&rdquo; (vehicle)</h3>
+
+<p>Fires when you dismount from an entity.</p>
+
+<h3 id="&quot;windowopen&quot;-(window)">&ldquo;windowOpen&rdquo; (window)</h3>
+
+<p>Fires when you begin using a workbench, chest, brewing stand, etc.</p>
+
+<h3 id="&quot;windowclose&quot;-(window)">&ldquo;windowClose&rdquo; (window)</h3>
+
+<p>Fires when you may no longer work with a workbench, chest, etc.</p>
+
+<h3 id="&quot;sleep&quot;">&ldquo;sleep&rdquo;</h3>
+
+<p>Fires when you sleep.</p>
+
+<h3 id="&quot;wake&quot;">&ldquo;wake&rdquo;</h3>
+
+<p>Fires when you wake up.</p>
+
+<h3 id="&quot;experience&quot;">&ldquo;experience&rdquo;</h3>
+
+<p>Fires when <code class="prettyprint">bot.experience.*</code> has updated.</p>
+
+<h2 id="functions">Functions</h2>
+
+<h3 id="bot.blockat(point)">bot.blockAt(point)</h3>
+
+<p>Returns the block at <code class="prettyprint">point</code> or <code class="prettyprint">null</code> if that point is not loaded.
+See <code class="prettyprint">Block</code>.</p>
+
+<h3 id="bot.candigblock(block)">bot.canDigBlock(block)</h3>
+
+<p>Returns whether <code class="prettyprint">block</code> is diggable and within range.</p>
+
+<h3 id="bot.recipesfor(itemtype,-metadata,-minresultcount,-craftingtable)">bot.recipesFor(itemType, metadata, minResultCount, craftingTable)</h3>
+
+<p>Returns a list of <code class="prettyprint">Recipe</code> instances that you could use to craft <code class="prettyprint">itemType</code>
+with <code class="prettyprint">metadata</code>.</p>
+
+<ul>
+<li><code class="prettyprint">itemType</code> - numerical item id of the thing you want to craft</li>
+<li><code class="prettyprint">metadata</code> - the numerical metadata value of the item you want to craft
+<code class="prettyprint">null</code> matches any metadata.</li>
+<li><code class="prettyprint">minResultCount</code> - based on your current inventory, any recipe from the
+returned list will be able to produce this many items. <code class="prettyprint">null</code> is an
+alias for <code class="prettyprint">1</code>.</li>
+<li><code class="prettyprint">craftingTable</code> - a <code class="prettyprint">Block</code> instance. If <code class="prettyprint">null</code>, only recipes that can
+be performed in your inventory window will be included in the list.</li>
+</ul>
+
+<h3 id="bot.recipesall(itemtype,-metadata,-craftingtable)">bot.recipesAll(itemType, metadata, craftingTable)</h3>
+
+<p>The same as bot.recipesFor except that it does not check wether the bot has enough materials for the recipe.</p>
+
+<h2 id="methods">Methods</h2>
+
+<h3 id="bot.end()">bot.end()</h3>
+
+<p>End the connection with the server.</p>
+
+<h3 id="bot.quit(reason)">bot.quit(reason)</h3>
+
+<p>Gracefully disconnect from the server with the given reason (defaults to &#39;disconnect.quitting&rsquo;).</p>
+
+<h3 id="bot.chat(message)">bot.chat(message)</h3>
+
+<p>Sends a publicly broadcast chat message. Breaks up big messages into multiple chat messages as necessary.</p>
+
+<h3 id="bot.whisper(username,-message)">bot.whisper(username, message)</h3>
+
+<p>Shortcut for &ldquo;/tell <username>&rdquo;. All split messages will be whispered to username.</p>
+
+<h3 id="bot.chataddpattern(pattern,-chattype,-description)">bot.chatAddPattern(pattern, chatType, description)</h3>
+
+<p>Adds a regex pattern to the bot&rsquo;s chat matching. Useful for bukkit servers where the chat format changes a lot.
+ * <code class="prettyprint">pattern</code> - regular expression to match chat
+ * <code class="prettyprint">chatType</code> - the event the bot emits when the pattern matches. Eg: &ldquo;chat&rdquo; or &ldquo;whisper&rdquo;
+ * &#39;description &rsquo; - Optional, describes what the pattern is for</p>
+
+<h3 id="bot.setsettings(options)">bot.setSettings(options)</h3>
+
+<p>See the <code class="prettyprint">bot.settings</code> property.</p>
+
+<h3 id="bot.sleep(bedblock,-[cb])">bot.sleep(bedBlock, [cb])</h3>
+
+<p>Sleep in a bed. <code class="prettyprint">bedBlock</code> should be a <code class="prettyprint">Block</code> instance which is a bed. <code class="prettyprint">cb</code> can have an err parameter if the bot cannot sleep.</p>
+
+<h3 id="bot.wake([cb])">bot.wake([cb])</h3>
+
+<p>Get out of bed. <code class="prettyprint">cb</code> can have an err parameter if the bot cannot wake up.</p>
+
+<h3 id="bot.setcontrolstate(control,-state)">bot.setControlState(control, state)</h3>
+
+<ul>
+<li><code class="prettyprint">control</code> - one of [&#39;forward&rsquo;, &#39;back&rsquo;, &#39;left&rsquo;, &#39;right&rsquo;, &#39;jump&rsquo;, &#39;sprint&rsquo;]</li>
+<li><code class="prettyprint">state</code> - <code class="prettyprint">true</code> or <code class="prettyprint">false</code></li>
+</ul>
+
+<h3 id="bot.clearcontrolstates()">bot.clearControlStates()</h3>
+
+<p>Sets all controls to off.</p>
+
+<h3 id="bot.lookat(point,-[force])">bot.lookAt(point, [force])</h3>
+
+<ul>
+<li><code class="prettyprint">point</code> - tilts your head so that it is directly facing this point.</li>
+<li><code class="prettyprint">force</code> - See <code class="prettyprint">force</code> in <code class="prettyprint">bot.look</code></li>
+</ul>
+
+<h3 id="bot.look(yaw,-pitch,-[force])">bot.look(yaw, pitch, [force])</h3>
+
+<p>Set the direction your head is facing.</p>
+
+<ul>
+<li><code class="prettyprint">yaw</code> - The number of radians to rotate around the vertical axis, starting
+from due east. Counter clockwise.</li>
+<li><code class="prettyprint">pitch</code> - Number of radians to point up or down. 0 means straight forward.
+pi / 2 means straight up. -pi / 2 means straight down.</li>
+<li><code class="prettyprint">force</code> - If present and true, skips the smooth server-side transition.
+Specify this to true if you need the server to know exactly where you
+are looking, such as for dropping items or shooting arrows. This is not
+needed for client-side calculation such as walking direction.</li>
+</ul>
+
+<h3 id="bot.updatesign(block,-text)">bot.updateSign(block, text)</h3>
+
+<p>Changes the text on the sign.</p>
+
+<h3 id="bot.equip(item,-destination,-[callback])">bot.equip(item, destination, [callback])</h3>
+
+<p>Equips an item from your inventory.</p>
+
+<ul>
+<li><code class="prettyprint">item</code> - <code class="prettyprint">Item</code> instance. See <code class="prettyprint">window.items()</code>.</li>
+<li><code class="prettyprint">destination</code>
+
+<ul>
+<li><code class="prettyprint">&quot;hand&quot;</code> - <code class="prettyprint">null</code> aliases to this</li>
+<li><code class="prettyprint">&quot;head&quot;</code></li>
+<li><code class="prettyprint">&quot;torso&quot;</code></li>
+<li><code class="prettyprint">&quot;legs&quot;</code></li>
+<li><code class="prettyprint">&quot;feet&quot;</code></li>
+</ul></li>
+<li><code class="prettyprint">callback(error)</code> - optional. called when you have successfully equipped
+the item or when you learn that you have failed to equip the item.</li>
+</ul>
+
+<h3 id="bot.unequip(destination,-[callback])">bot.unequip(destination, [callback])</h3>
+
+<p>Remove an article of equipment.</p>
+
+<h3 id="bot.tossstack(item,-[callback])">bot.tossStack(item, [callback])</h3>
+
+<ul>
+<li><code class="prettyprint">item</code> - the stack of items you wish to toss</li>
+<li><code class="prettyprint">callback(error)</code> - optional, called when tossing is done. if error is
+truthy, you were not able to complete the toss.</li>
+</ul>
+
+<h3 id="bot.toss(itemtype,-metadata,-count,-[callback])">bot.toss(itemType, metadata, count, [callback])</h3>
+
+<ul>
+<li><code class="prettyprint">itemType</code> - numerical id of the item you wish to toss</li>
+<li><code class="prettyprint">metadata</code> - metadata of the item you wish to toss. Use <code class="prettyprint">null</code>
+to match any metadata</li>
+<li><code class="prettyprint">count</code> - how many you want to toss. <code class="prettyprint">null</code> is an alias for <code class="prettyprint">1</code>.</li>
+<li><code class="prettyprint">callback(err)</code> - (optional) called once tossing is complete</li>
+</ul>
+
+<h3 id="bot.dig(block,-[callback])">bot.dig(block, [callback])</h3>
+
+<p>Begin digging into <code class="prettyprint">block</code> with the currently equipped item.
+See also &ldquo;diggingCompleted&rdquo; and &ldquo;diggingAborted&rdquo; events.</p>
+
+<p>Note that once you begin digging into a block, you may not
+dig any other blocks until the block has been broken, or you call
+<code class="prettyprint">bot.stopDigging()</code>.</p>
+
+<ul>
+<li><code class="prettyprint">block</code> - the block to start digging into</li>
+<li><code class="prettyprint">callback(err)</code> - (optional) called when the block is broken or you
+are interrupted.</li>
+</ul>
+
+<h3 id="bot.stopdigging()">bot.stopDigging()</h3>
+
+<h3 id="bot.digtime(block)">bot.digTime(block)</h3>
+
+<p>Tells you how long it will take to dig the block, in milliseconds.</p>
+
+<h3 id="bot.staticdigtime(block,creative,helditemtype,inwater,onground)">bot.staticDigTime(block,creative,heldItemType,inWater,onGround)</h3>
+
+<p>Tells you how long it will take to dig the block, in milliseconds.
+The difference between that function and bot.digTime is that this function is static :
+ it doesn&rsquo;t depend on the environment of the bot, you can call it at any time and get the same result.</p>
+
+<ul>
+<li><code class="prettyprint">block</code> block to dig</li>
+<li><code class="prettyprint">creative</code> game in creative</li>
+<li><code class="prettyprint">heldItemType</code> the id of the held item (or null if nothing is held)</li>
+<li><code class="prettyprint">inWater</code> the bot is in water</li>
+<li><code class="prettyprint">onGround</code> the bot in on the ground</li>
+</ul>
+
+<h3 id="bot.placeblock(referenceblock,-facevector)">bot.placeBlock(referenceBlock, faceVector)</h3>
+
+<ul>
+<li><code class="prettyprint">referenceBlock</code> - the block you want to place a new block next to</li>
+<li><code class="prettyprint">faceVector</code> - one of the six cardinal directions, such as <code class="prettyprint">new Vec3(0, 1, 0)</code> for the top face,
+indicating which face of the <code class="prettyprint">referenceBlock</code> to place the block against.</li>
+</ul>
+
+<p>The new block will be placed at <code class="prettyprint">referenceBlock.position.plus(faceVector)</code>.</p>
+
+<h3 id="bot.activateblock(block)">bot.activateBlock(block)</h3>
+
+<p>Punch a note block, open a door, etc.</p>
+
+<h3 id="bot.activateitem()">bot.activateItem()</h3>
+
+<p>Activates the currently held item. This is how you eat, shoot bows, throw an egg, etc.</p>
+
+<h3 id="bot.deactivateitem()">bot.deactivateItem()</h3>
+
+<p>Deactivates the currently held item. This is how you release an arrow, stop eating, etc.</p>
+
+<h3 id="bot.useon(targetentity)">bot.useOn(targetEntity)</h3>
+
+<p>Use the currently held item on an <code class="prettyprint">Entity</code> instance. This is how you apply a saddle and
+use shears.</p>
+
+<h3 id="bot.attack(entity)">bot.attack(entity)</h3>
+
+<p>Attack a player or a mob.</p>
+
+<h3 id="bot.mount(entity)">bot.mount(entity)</h3>
+
+<p>Mount a vehicle. To get back out, use <code class="prettyprint">bot.dismount</code>.</p>
+
+<h3 id="bot.dismount()">bot.dismount()</h3>
+
+<p>Dismounts from the vehicle you are in.</p>
+
+<h3 id="bot.movevehicle(left,forward)">bot.moveVehicle(left,forward)</h3>
+
+<p>Moves the vehicle :</p>
+
+<ul>
+<li>left can take -1 or 1 : -1 means right, 1 means left</li>
+<li>forward can take -1 or 1 : -1 means backward, 1 means forward</li>
+</ul>
+
+<p>All the direction are relative to where the bot is looking at</p>
+
+<h3 id="bot.setquickbarslot(slot)">bot.setQuickBarSlot(slot)</h3>
+
+<ul>
+<li><code class="prettyprint">slot</code> - 0-8 the quick bar slot to select.</li>
+</ul>
+
+<h3 id="bot.craft(recipe,-count,-craftingtable,-[callback])">bot.craft(recipe, count, craftingTable, [callback])</h3>
+
+<ul>
+<li><code class="prettyprint">recipe</code> - A <code class="prettyprint">Recipe</code> instance. See <code class="prettyprint">bot.recipesFor</code>.</li>
+<li><code class="prettyprint">count</code> - How many times you wish to perform the operation.
+If you want to craft planks into <code class="prettyprint">8</code> sticks, you would set
+<code class="prettyprint">count</code> to <code class="prettyprint">2</code>. <code class="prettyprint">null</code> is an alias for <code class="prettyprint">1</code>.</li>
+<li><code class="prettyprint">craftingTable</code> - A <code class="prettyprint">Block</code> instance, the crafting table you wish to
+use. If the recipe does not require a crafting table, you may use
+<code class="prettyprint">null</code> for this argument.</li>
+<li><code class="prettyprint">callback</code> - (optional) Called when the crafting is complete and your
+inventory is updated.</li>
+</ul>
+
+<h3 id="bot.openchest(chestblock)">bot.openChest(chestBlock)</h3>
+
+<p>Returns a <code class="prettyprint">Chest</code> instance which represents the chest you are opening.</p>
+
+<h3 id="bot.openfurnace(furnaceblock)">bot.openFurnace(furnaceBlock)</h3>
+
+<p>Returns a <code class="prettyprint">Furnace</code> instance which represents the furnace you are opening.</p>
+
+<h3 id="bot.opendispenser(dispenserblock)">bot.openDispenser(dispenserBlock)</h3>
+
+<p>Returns a <code class="prettyprint">Dispenser</code> instance which represents the dispenser you are opening.</p>
+
+<h3 id="bot.openenchantmenttable(enchantmenttableblock)">bot.openEnchantmentTable(enchantmentTableBlock)</h3>
+
+<p>Returns an <code class="prettyprint">EnchantmentTable</code> instance which represents the enchantment table
+you are opening.</p>
+
+<h2 id="lower-level-inventory-methods">Lower level inventory methods</h2>
+
+<p>These are lower level methods for the inventory, they can be useful sometimes but prefer the inventory methods presented above if you can.</p>
+
+<h3 id="bot.clickwindow(slot,-mousebutton,-mode,-cb)">bot.clickWindow(slot, mouseButton, mode, cb)</h3>
+
+<p>Click on the current window.</p>
+
+<h3 id="bot.putselecteditemrange(start,-end,-window,-slot,-cb)">bot.putSelectedItemRange(start, end, window, slot, cb)</h3>
+
+<p>Put the item at <code class="prettyprint">slot</code> in the specified range.</p>
+
+<h3 id="bot.putaway(slot,-cb)">bot.putAway(slot, cb)</h3>
+
+<p>Put the item at <code class="prettyprint">slot</code> in the inventory.</p>
+
+<h3 id="bot.closewindow(window)">bot.closeWindow(window)</h3>
+
+<p>Close the <code class="prettyprint">window</code>.</p>
+
+<h3 id="bot.transfer(options,-cb)">bot.transfer(options, cb)</h3>
+
+<p>Transfer some kind of item from one range to an other. <code class="prettyprint">options</code> is an object containing :</p>
+
+<ul>
+<li><code class="prettyprint">window</code> : the window where the item will be moved</li>
+<li><code class="prettyprint">itemType</code> : the type of the moved items</li>
+<li><code class="prettyprint">metadata</code> : the metadata of the moved items</li>
+<li><code class="prettyprint">sourceStart</code> and <code class="prettyprint">sourceEnd</code> : the source range</li>
+<li><code class="prettyprint">destStart</code> and <code class="prettyprint">destEnd</code> : the dest Range</li>
+</ul>
+
+<h3 id="bot.openblock(block,-class)">bot.openBlock(block, Class)</h3>
+
+<p>Open a block, for example a chest.</p>
+
+<ul>
+<li><code class="prettyprint">block</code> is the block the bot will open</li>
+<li><code class="prettyprint">Class</code> is the type of window that will be opened</li>
+</ul>
+
+<h3 id="bot.moveslotitem(sourceslot,-destslot,-cb)">bot.moveSlotItem(sourceSlot, destSlot, cb)</h3>
+
+<p>Move an item from <code class="prettyprint">sourceSlot</code> to <code class="prettyprint">destSlot</code> in the current window.</p>
+
+<h3 id="bot.updatehelditem()">bot.updateHeldItem()</h3>
+
+<p>Update <code class="prettyprint">bot.heldItem</code>.</p>
+
+<h2 id="bot.creative">bot.creative</h2>
+
+<p>This collection of apis is ueseful in creative mode.
+Detecting and changing gamemodes is not implemented here,
+but it is assumed and often required that the bot be in creative mode for these features to work.</p>
+
+<h3 id="bot.creative.setinventoryslot(slot,-item)">bot.creative.setInventorySlot(slot, item)</h3>
+
+<p>Gives the bot the specified item in the specified inventory slot.</p>
+
+<ul>
+<li><code class="prettyprint">slot</code> is in inventory window coordinates (where 36 is the first quickbar slot, etc.).</li>
+<li><code class="prettyprint">item</code> can presumably be anything, specified with arbitrary metadata, nbtdata, etc.
+If <code class="prettyprint">item</code> is <code class="prettyprint">null</code>, the item at the specified slot is deleted.</li>
+</ul>
+
+<p>If this method changes anything, you can be notified via <code class="prettyprint">bot.inventory.on(&quot;windowUpdate&quot;)</code>.</p>
+
+<h3 id="bot.creative.flyto(destination,-[cb])">bot.creative.flyTo(destination, [cb])</h3>
+
+<p>Calls <code class="prettyprint">startFlying()</code> and moves at a constant speed through 3d space in a straight line to the destination.
+<code class="prettyprint">destination</code> is a <code class="prettyprint">Vec3</code>, and often the <code class="prettyprint">x</code> and <code class="prettyprint">z</code> coordinates will end with <code class="prettyprint">.5</code>.
+This operation will not work if there is an obstacle in the way,
+so it is advised to fly very short distances at a time.</p>
+
+<p>When the bot arrives at the destination, <code class="prettyprint">cb</code> is called.</p>
+
+<p>This method does not attempt any path finding.
+It is expected that a path finding implementation will use this method to move &lt; 2 blocks at a time.</p>
+
+<p>To resume normal physics, call <code class="prettyprint">stopFlying()</code>.</p>
+
+<h3 id="bot.creative.startflying()">bot.creative.startFlying()</h3>
+
+<p>Sets <code class="prettyprint">bot.physics.gravity</code> to <code class="prettyprint">0</code>.
+To resume normal physics, call <code class="prettyprint">stopFlying()</code>.</p>
+
+<p>This method is useful if you want to hover while digging the ground below you.
+It is not necessary to call this function before calling <code class="prettyprint">flyTo()</code>.</p>
+
+<p>Note that while flying, <code class="prettyprint">bot.entity.velocity</code> will not be accurate.</p>
+
+<h3 id="bot.creative.stopflying()">bot.creative.stopFlying()</h3>
+
+<p>Restores <code class="prettyprint">bot.physics.gravity</code> to it&rsquo;s original value.</p>
+
+      </div>
+      <div class="dark-box">
+      </div>
+    </div>
+  </body>
+</html>
